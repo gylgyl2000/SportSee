@@ -9,8 +9,8 @@ import PropTypes from 'prop-types'
 const BASE_URL = 'http://localhost:3001/user/'
 const MOCK_API = '/mock-api/'
 
-const DATA_URL = process.env.NODE_ENV === 'development' ? MOCK_API : BASE_URL
-const extension = process.env.NODE_ENV === 'development' ? '.json' : ''
+const DATA_URL = process.env.NODE_ENV === 'development' ? BASE_URL : MOCK_API
+const extension = process.env.NODE_ENV === 'development' ? '' : '.json'
 
 /**
  * Hook that fetches data from the API.
