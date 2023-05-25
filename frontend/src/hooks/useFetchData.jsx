@@ -7,7 +7,7 @@ import extractPerformance from '../utils/extractPerformance'
 import PropTypes from 'prop-types'
 
 const BASE_URL = 'http://localhost:3001/user/'
-const MOCK_API = './mock-api/'
+const MOCK_API = '../mock-api/'
 
 const DATA_URL = process.env.NODE_ENV === 'development' ? BASE_URL : MOCK_API
 const extension = process.env.NODE_ENV === 'development' ? '' : '.json'
