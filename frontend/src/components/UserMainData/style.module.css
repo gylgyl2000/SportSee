@@ -1,0 +1,85 @@
+.nutrient {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 2vw;
+    background-color: #f5f5f5;
+    border-radius: 0.25rem;
+    height: 14vh;
+    max-height: 124px;
+}
+  
+.calorie {
+    grid-area: cal;
+}
+
+.protein {
+    grid-area: pro;
+}
+
+.carbohydrate {
+    grid-area: car;
+}
+
+.lipid {
+    grid-area: lip;
+}
+
+/* .iconWrapper {
+    height: 2.5rem;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border-radius: 0.25rem;
+}
+
+.calorie .iconWrapper {
+    color: #dc2626;
+    background-color: rgba(#dc2626, 0.1);
+}
+
+.protein .iconWrapper {
+    color: #2563eb;
+    background-color: rgba(#2563eb, 0.1);
+}
+
+.carbohydrate .iconWrapper {
+    color: #ca8a04;
+    background-color: rgba(#ca8a04, 0.1);
+}
+
+.lipid .iconWrapper {
+    color: #db2777;
+    background-color: rgba(#db2777, 0.1);
+} */
+
+.icon {
+    /* height: 1.25rem; */
+    max-height: 60px;
+    height: 5vh;
+}
+
+.infos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.title {
+    font-weight: 700;
+    color: #171717;
+    line-height: 1.5;
+    margin: 0;
+    font-size: 1.8vh;
+    /* @media (min-width: 640px) {
+        font-size: 1.125rem;
+    } */
+}
+
+.description {
+    font-size: 0.875rem;
+    color: #78716c;
+    text-transform: capitalize;
+    line-height: 2;
+    margin: 0;
+}
