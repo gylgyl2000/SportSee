@@ -4,7 +4,7 @@ import colors from '../../style/colors'
 import Logo from '../../assets/logo.png'
 
 const routes = [
-    { path: '/SportSee//', label: 'Accueil' },
+    { path: '/SportSee/', label: 'Accueil' },
     { path: '/SportSee/profil', label: 'Profil' },
     { path: '/SportSee/reglage', label: 'Réglage' },
     { path: '/SportSee/communaute', label: 'Communauté' }
