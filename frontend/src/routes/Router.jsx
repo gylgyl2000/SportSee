@@ -8,8 +8,8 @@ import Error from "../pages/Error"
 import DashBoard from "../pages/DashBoard"
 
 const routePaths = {
-    login: '/',
-    dashboard: '/user/:id',
+    login: '/SportSee/',
+    dashboard: '/SportSee/user/:id',
     error: '*'
 }
   

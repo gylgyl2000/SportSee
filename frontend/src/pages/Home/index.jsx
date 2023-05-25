@@ -24,7 +24,7 @@ const Home = () => {
         <HomeWrapper>
             <HomeContainer>
                     {userId.userList.map(user => (
-                        <StyledLink key={`user-${user.id}`} $isFullLink to={`/user/${user.id}`}>
+                        <StyledLink key={`user-${user.id}`} $isFullLink to={`/SportSee/user/${user.id}`}>
                             <CardTitle onClick={() => handleLogin(user.id)}>{user.name}</CardTitle>
                         </StyledLink>
                     ))}

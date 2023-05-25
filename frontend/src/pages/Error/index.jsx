@@ -18,13 +18,13 @@ const layoutOptions = {
 
 const Error = ({ layout }) => {
     const userId = localStorage.getItem('userId')
-    const dashBoard = "/user/" + userId
+    const dashBoard = "/SportSee/user/" + userId
 
     return (
         <ErrorSection id='ErrorSection'>
             <ErrorTitle id='ErrorTitle'>404</ErrorTitle>
             <ErrorText id='ErrorText'>La page que vous recherchez n&apos;existe pas ou a été déplacée...</ErrorText>
-            <StyledLink id='StyledLink' to={layout === layoutOptions.app ? dashBoard : '/'}>
+            <StyledLink id='StyledLink' to={layout === layoutOptions.app ? dashBoard : '/SportSee/'}>
                 {layout === layoutOptions.app ? 'Tableau de bord' : 'Connexion'}
             </StyledLink>
         </ErrorSection>

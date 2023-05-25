@@ -4,10 +4,10 @@ import colors from '../../style/colors'
 import Logo from '../../assets/logo.png'
 
 const routes = [
-    { path: '/', label: 'Accueil' },
-    { path: 'profil', label: 'Profil' },
-    { path: 'reglage', label: 'Réglage' },
-    { path: 'communaute', label: 'Communauté' }
+    { path: '/SportSee//', label: 'Accueil' },
+    { path: '/SportSee/profil', label: 'Profil' },
+    { path: '/SportSee/reglage', label: 'Réglage' },
+    { path: '/SportSee/communaute', label: 'Communauté' }
 ]
 
 /**

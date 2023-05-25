@@ -14,7 +14,7 @@ const useAuth = () => {
     const handleStorageChange = useCallback(event => event.key === 'userId' && setUserId(event.newValue), [])
 
     useEffect(() => {
-        !userId && navigate('/')
+        !userId && navigate('/SportSee/')
         window.addEventListener('storage', handleStorageChange)
 
         return () => window.removeEventListener('storage', handleStorageChange)
