@@ -5,6 +5,20 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import colors from '../../style/colors'
 
+/**
+ * Renders a bar chart for the activity data.
+ * @function Activity
+ * @param {Object} data - The data for the activity.
+ * @param {Array} data.activity - The array of daily activity data.
+ * @param {Array} data.activity.day - The day for the activity.
+ * @param {number} data.activity.kilogram - The amount of weight (in kg) for the activity.
+ * @param {number} data.activity.calories - The amount of calories burned for the activity.
+ * @param {Array} data.averageSessions - The array of session averages.
+ * @param {Object} data.performance - The performance data.
+ * @param {Object} data.mainData - The main data.
+ * @returns {JSX.Element} - The rendered component.
+ */
+
 const D3BarplotGrouped = ({ Data }) => {
     const [parentReference, parentDimensions] = useDimensions()
 
@@ -262,36 +276,6 @@ const SvgContainer = styled.svg`
   
     overflow: visible;
 `
-  
-// .tooltip {
-// display: inline-block;
-// width: 1px;
-// height: 1px;
-// overflow: visible;
-// }
-
-// .tooltipContent {
-// display: inline-flex;
-// flex-direction: column;
-// width: max-content;
-// color: var.$color-white;
-// border-radius: var.$rounded-sm;
-// overflow: hidden;
-// box-shadow: var.$shadow-md;
-// }
-
-// .tooltipContent > * {
-//     text-align: center;
-//     padding: 0.5rem 0.5rem;
-// }
-
-// .tooltipPoids {
-// background-color: var.$color-neutral-700;
-// }
-
-// .tooltipCalories {
-// background-color: var.$color-red;
-// }
 
 D3BarplotGrouped.propTypes = {
     Data: PropTypes.arrayOf(

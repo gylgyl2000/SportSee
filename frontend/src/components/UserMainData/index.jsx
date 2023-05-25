@@ -1,5 +1,4 @@
-import React from "react";
-// import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import caloriesIcon from '../../assets/caloriesIcon.png'
 import proteinIcon from '../../assets/proteinIcon.png'
 import carbsIcon from '../../assets/carbsIcon.png'
@@ -9,10 +8,18 @@ import Count from "../../views/Count";
 
 import style from './style.module.css'
 
-const UserMainData = ({ nutrient }) => {
-    // let kCalWithComma = new Intl.NumberFormat('en-US').format(calories)
-    console.log(nutrient.value)
+/**
+ * Renders a nutrient component.
+ * @function Nutrient
+ * @param {Object} nutrient - The nutrient data to display.
+ * @param {string} nutrient.name - The name of the nutrient.
+ * @param {string} nutrient.displayedName - The displayed name of the nutrient.
+ * @param {number} nutrient.value - The value of the nutrient.
+ * @param {string} nutrient.unit - The unit of the nutrient.
+ * @returns {JSX.Element} - The rendered component.
+ */
 
+const UserMainData = ({ nutrient }) => {
     return (
         <article className={`${style.nutrient} ${style[nutrient.name]}`}>
             <div className={style.iconWrapper}>
@@ -26,70 +33,16 @@ const UserMainData = ({ nutrient }) => {
                 <p className={style.description}>{nutrient.displayedName}</p>
             </div>
         </article>
-        // <MainDataContainer id='MainDataContainer'>
-        //     <DataContainer>
-        //         <DataIcon src={caloriesIcon} />
-        //         <KeyData>
-        //             <DataCount>{kCalWithComma}kCal</DataCount>
-        //             <DataName>Calories</DataName>
-        //         </KeyData>
-        //     </DataContainer>
-        //     <DataContainer>
-        //         <DataIcon src={proteinIcon} />
-        //         <KeyData>
-        //             <DataCount>{protein}g</DataCount>
-        //             <DataName>Proteines</DataName>
-        //         </KeyData>
-        //     </DataContainer>
-        //     <DataContainer>
-        //         <DataIcon src={carbsIcon} />
-        //         <KeyData>
-        //             <DataCount>{carbohydrate}g</DataCount>
-        //             <DataName>Glucides</DataName>
-        //         </KeyData>
-        //     </DataContainer>
-        //     <DataContainer>
-        //         <DataIcon src={fatIcon} />
-        //         <KeyData>
-        //             <DataCount>{lipid}g</DataCount>
-        //             <DataName>Lipides</DataName>
-        //         </KeyData>
-        //     </DataContainer>
-        // </MainDataContainer>
     )
 }
 
-// const MainDataContainer = styled.div`
-//     width: 258px;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-between;
-//     height: 65vh;
-//     width: 18vw;
-//     max-width: 258px;
-// `
-// const DataContainer = styled.div`
-//     width: 18vw
-//     max-width: 258px;
-//     display: flex;
-//     background-color: rgb(220, 224, 219);
-//     height: 124px;
-//     align-items: center;
-//     justify-content: flex-start;
-// `
-// const DataIcon = styled.img`
-//     width: 60px;
-//     margin: 0 30px;
-// `
-// const DataCount = styled.h2`
-//     font-size: 20px;
-//     font-weight: bold;
-//     margin: 0;
-// `
-// const KeyData = styled.div`
-// `
-// const DataName = styled.span`
-//     font-size: 14px;
-// `
+UserMainData.propTypes = {
+    nutrient: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        value: PropTypes.number.isRequired,
+        unit: PropTypes.string.isRequired,
+        displayedName: PropTypes.string.isRequired
+    }).isRequired
+}
 
 export default UserMainData;

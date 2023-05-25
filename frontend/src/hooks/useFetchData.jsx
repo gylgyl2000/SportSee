@@ -37,8 +37,8 @@ const useFetchData = (userId) => {
     
     const fetchData = async () => {
         try {
-          const [mainData, activity, averageSessions, performance] = await Promise.all(
-            Object.values(END_POINTS).map(url => fetch(url).then(response => response.json()))
+            const [mainData, activity, averageSessions, performance] = await Promise.all(
+                Object.values(END_POINTS).map(url => fetch(url).then(response => response.json()))
             )
             setData({
                 mainData: extractMainData(mainData),
@@ -46,28 +46,26 @@ const useFetchData = (userId) => {
                 averageSessions: extractAverageSessions(averageSessions),
                 performance: extractPerformance(performance)
             })
-            // console.log(activity)
         } catch (error) {
             setError(error)
         } finally {
             setLoading(false)
         }
     }
-    // console.log(data)
-      useEffect(() => {
+
+    useEffect(() => {
         const timeoutId = setTimeout(() => {
-          fetchData()
+            fetchData()
         }, 250)
-    
+
         return () => clearTimeout(timeoutId)
-      }, [userId])
-    
-      return { data, loading, error }
-    }
+    }, [userId])
+
+    return { data, loading, error }
+}
 
 useFetchData.propTypes = {
     userId: PropTypes.number.isRequired
 }
-
 
 export default useFetchData

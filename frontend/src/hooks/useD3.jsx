@@ -11,23 +11,25 @@ import PropTypes from 'prop-types'
  * @see {@link https://d3js.org/|D3}
  * @see {@link https://wattenberger.com/blog/react-and-d3|How to use React and D3 together}
  */
+
 const useD3 = (renderChartFunction, dependencies) => {
-  const chartReference = useRef()
+    const chartReference = useRef()
 
-  useEffect(() => {
-    const chart = d3.select(chartReference.current)
+    useEffect(() => {
+        const chart = d3.select(chartReference.current)
 
-    renderChartFunction(chart)
+        renderChartFunction(chart)
 
-    return () => chart.selectAll('*').remove()
-  }, dependencies)
+        return () => chart.selectAll('*').remove()
+    }, [renderChartFunction])
 
-  return { chartReference }
+    return { chartReference }
 }
+
 export default useD3
 
 useD3.propTypes = {
-  renderChartFunction: PropTypes.func.isRequired,
-  dependencies: PropTypes.arrayOf(PropTypes.any).isRequired
+    renderChartFunction: PropTypes.func.isRequired,
+    dependencies: PropTypes.arrayOf(PropTypes.any).isRequired
 
 }

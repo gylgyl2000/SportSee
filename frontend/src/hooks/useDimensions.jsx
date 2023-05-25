@@ -5,23 +5,24 @@ import { useState, useRef, useLayoutEffect } from 'react'
  * @function useDimensions
  * @returns {array} Returns an array containing a reference to the parent element and its dimensions.
  */
+
 const useDimensions = () => {
-  const [parentDimensions, setParentDimensions] = useState({ width: 0, height: 0 })
-  const parentReference = useRef(null)
+    const [parentDimensions, setParentDimensions] = useState({ width: 0, height: 0 })
+    const parentReference = useRef(null)
 
-  const handleResize = () => {
-    const { width, height } = parentReference.current.getBoundingClientRect()
-    setParentDimensions({ width, height })
-  }
+    const handleResize = () => {
+        const { width, height } = parentReference.current.getBoundingClientRect()
+        setParentDimensions({ width, height })
+    }
 
-  useLayoutEffect(() => {
-    handleResize()
-    window.addEventListener('resize', handleResize)
+    useLayoutEffect(() => {
+        handleResize()
+        window.addEventListener('resize', handleResize)
 
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
 
-  return [parentReference, parentDimensions]
+    return [parentReference, parentDimensions]
 }
 
 export default useDimensions

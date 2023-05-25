@@ -6,7 +6,6 @@
  * @returns {array} Returns the array of activity sessions data.
  */
 
-
 const extractActivity = ({ data: { sessions } }) => sessions
 
 export default extractActivity

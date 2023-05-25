@@ -5,6 +5,14 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import colors from '../../style/colors'
 
+/**
+ * Component that displays a circular score chart.
+ * @function Score
+ * @param {Object} props - The component props.
+ * @param {number} props.score - The user's score as a percentage (between 0 and 1).
+ * @returns {JSX.Element} Returns a React element for the score chart.
+ */
+
 const D3RadialChart = ({ Data }) => {
     const [parentReference, parentDimensions] = useDimensions()
 

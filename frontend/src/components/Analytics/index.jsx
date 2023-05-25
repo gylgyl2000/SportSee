@@ -3,7 +3,9 @@ import UserAverageSessions from '../UserAverageSessions'
 import UserPerformance from '../UserPerformance'
 import UserScore from '../UserScore'
 import UserMainData from '../UserMainData'
+
 import PropTypes from 'prop-types'
+
 import styled from 'styled-components'
 
 /**
@@ -37,16 +39,16 @@ const Analytics = ({ data }) => {
 
 const AnalyticsSection = styled.section`
     @media (min-width: 640px) {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      grid-template-areas:
-        'act act'
-        'ses ses'
-        'per per'
-        'sco sco'
-        'cal pro'
-        'car lip';
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            'act act'
+            'ses ses'
+            'per per'
+            'sco sco'
+            'cal pro'
+            'car lip';
     }
   
     // @media (min-width: 1024px) {
@@ -59,23 +61,23 @@ const AnalyticsSection = styled.section`
     // }
   
     @media (min-width: 1024px) {
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      grid-template-areas:
-        'act act act act act act act act act act act act'
-        'ses ses ses ses per per per per sco sco sco sco'
-        'cal cal cal pro pro pro car car car lip lip lip';
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-areas:
+            'act act act act act act act act act act act act'
+            'ses ses ses ses per per per per sco sco sco sco'
+            'cal cal cal pro pro pro car car car lip lip lip';
     }
   
     @media (min-width: 1280px) {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      grid-template-areas:
-        'act act act cal'
-        'act act act pro'
-        'ses per sco car'
-        'ses per sco lip';
-    }
-  }
-  `
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-areas:
+            'act act act cal'
+            'act act act pro'
+            'ses per sco car'
+            'ses per sco lip';
+        }
+}
+`
 
 Analytics.propTypes = {
     data: PropTypes.object.isRequired

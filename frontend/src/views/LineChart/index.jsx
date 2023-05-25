@@ -5,19 +5,14 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import colors from '../../style/colors'
 
-// const Data = [
-//     {day: "lundi", sessionLength: 30},
-//     {day: "mardi", sessionLength: 40},
-//     {day: "mercredi", sessionLength: 50},
-//     {day: "jeudi", sessionLength: 30},
-//     {day: "vendredi", sessionLength: 30},
-//     {day: "samedi", sessionLength: 50},
-//     {day: "dimanche", sessionLength: 50}
-// ]
-
+/**
+ * Component that renders a line chart for the average duration of sessions.
+ * @function Sessions
+ * @param {Array} sessions - The array of sessions data.
+ * @returns {JSX.Element} Returns a React element that displays the chart for the average duration of sessions.
+ */
 
 const D3LineChart = ({ Data }) => {
-    console.log(Data)
     const [parentReference, parentDimensions] = useDimensions()
 
     const { chartReference } = useD3(
@@ -187,22 +182,6 @@ const SvgContainer = styled.svg`
     --line: ${colors.primary};
     --cursor: rgba(0, 0, 0, 0.15);
 `
-// const tooltipStyle = css`
-//     display: inline-block;
-//     width: 1px;
-//     height: 1px;
-//     overflow: visible;
-// `
-// const tooltipSpanStyle  = css`
-//     display: inline-block;
-//     width: max-content;
-//     padding: 0.25rem 0.5rem;
-//     backgroundColor: colors.primary;
-//     borderRadius: 0.25rem;
-//     boxShadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-// `
-
-  
 
 D3LineChart.propTypes = {
     Data: PropTypes.arrayOf(
