@@ -1,3 +1,4 @@
+import axios from "axios"
 import { useState, useEffect, useMemo } from 'react'
 import extractActivity from '../utils/extractActivity'
 import extractAverageSessions from '../utils/extractAverageSessions'
@@ -25,7 +26,7 @@ const useFetchData = (userId) => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState()
 
-    const END_POINTS = useMemo(
+    const endpoints = useMemo(
         () => ({
             mainData: `${DATA_URL}${userId}${extension}`,
             activity: `${DATA_URL}${userId}/activity${extension}`,
@@ -34,13 +35,13 @@ const useFetchData = (userId) => {
         }),
         [userId]
     )
-    
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const [mainData, activity, averageSessions, performance] = await Promise.all(
-                    Object.values(END_POINTS).map(url => fetch(url).then(response => response.json()))
+                    Object.values(endpoints).map(url => fetch(url).then(response => response.json()))
                 )
+            
                 setData({
                     mainData: extractMainData(mainData),
                     activity: extractActivity(activity),
@@ -54,13 +55,12 @@ const useFetchData = (userId) => {
             }
         }
 
-        const timeoutId = setTimeout(() => {
-            fetchData()
-        }, 250)
-
-        return () => clearTimeout(timeoutId)
-    }, [END_POINTS])
-
+            const timeoutId = setTimeout(() => {
+                fetchData()
+            }, 250)
+        
+            return () => clearTimeout(timeoutId)
+    }, [endpoints, userId])
     return { data, loading, error }
 }
 
