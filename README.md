@@ -12,11 +12,12 @@
 
 **devDependencies**
 
-<img src="https://img.shields.io/badge/Jsdoc-4.0.0-orange"/>
+<img src="https://img.shields.io/badge/styled--components-5.3.9-orange"/>&nbsp;&nbsp;
+<img src="https://img.shields.io/badge/Jsdoc-4.0.0-orange"/>&nbsp;&nbsp;
 
 **Visualization package**
 
-<img src="https://img.shields.io/badge/D3-7.6.1-red"/>
+<img src="https://img.shields.io/badge/D3-7.6.1-red"/>&nbsp;&nbsp;
 
 
 Sportsee is an application for monitoring physical activity.
