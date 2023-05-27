@@ -1,4 +1,3 @@
-import axios from "axios"
 import { useState, useEffect, useMemo } from 'react'
 import extractActivity from '../utils/extractActivity'
 import extractAverageSessions from '../utils/extractAverageSessions'

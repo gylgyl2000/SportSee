@@ -1,7 +1,8 @@
+![made-with-react](./assets/made-with-react.svg)
 
-# This project was made with :
+# SportSee : monitoring physical activity
 
-![made-with-react](https://user-images.githubusercontent.com/75996200/166201532-1a68d09e-7f75-4106-ba2c-ac047ccc4cc4.svg)
+![SportSee](assets/V1%20C.jpg)
 
 **Dependencies**
 
@@ -19,3 +20,22 @@
 
 
 Sportsee is an application for monitoring physical activity.
+
+- [Live demo 🌍](https://jyjystudio.github.io/sportsee/) 
+
+**Launching the project**
+
+1. Fork the repository
+
+2. Clone it on your computer
+
+3. Install the dependencies with `npm install` or `yarn install`
+
+4. for using api data: 
+    * From home directory, open a terminal and run: `cd back`
+    * Open the server with `npm run dev` or `yarn dev`, backend should be running on port 3001
+
+5. From home directory, open the terminal and run: `cd front/` then run `npm start` or `yarn start` (starts the app), App should start on port 3000 ([http://localhost:3000](http://localhost:3000)).
+
+
+
