@@ -21,7 +21,7 @@
 
 Sportsee is an application for monitoring physical activity.
 
-- [Live demo 🌍](https://jyjystudio.github.io/sportsee/) 
+- [Live demo 🌍](https://gylgyl2000.github.io/SportSee/) 
 
 **Launching the project**
 
